@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'main#index'
   get 'main/index'
   get 'main/count_save'
   # The priority is based upon order of creation: first created -> highest priority.
