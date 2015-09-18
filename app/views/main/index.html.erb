@@ -1,0 +1,24 @@
+<div>
+  <center>
+    <p style="font-size:50px;" id='count'>
+      <%= @number.count %>
+    </p>
+    <a id='like' style="cursor:pointer">
+      <img src='/like.png' /><h1>LIKE</h1>
+    </a>
+  </center>
+</div>
+
+<script>
+  $(function() {
+    var i = <%= @number.count %>;
+    $('#like').click(function() {
+      i++;
+      $.ajax({
+        data: {count: i},
+        url: '/main/count_save',
+        success: $('#count').html(i)
+      });
+    });
+  });
+</script>
